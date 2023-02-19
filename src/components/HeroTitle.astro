@@ -1,0 +1,10 @@
+---
+interface Props {
+  color?: string;
+}
+const { color } = Astro.props;
+---
+
+<div class={`font-semibold sm:text-2xl text-lg mt-6 sm:mt-9 ${color ?? ""}`}>
+  <slot />
+</div>

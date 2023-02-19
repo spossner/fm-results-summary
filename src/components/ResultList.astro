@@ -1,0 +1,38 @@
+---
+import ResultItem from "./ResultItem.astro";
+
+interface Props {
+  reaction: number;
+  memory: number;
+  verbal: number;
+  visual: number;
+}
+const { reaction, memory, verbal, visual } = Astro.props;
+---
+
+<div class="flex flex-col items-center gap-4 mt-6">
+  <ResultItem
+    title="Reaction"
+    value={reaction}
+    bgColor="bg-my-red-50"
+    textColor="text-my-red-700"
+  />
+  <ResultItem
+    title="Memory"
+    value={memory}
+    bgColor="bg-my-yellow-50"
+    textColor="text-my-yellow-700"
+  />
+  <ResultItem
+    title="Verbal"
+    value={verbal}
+    bgColor="bg-my-green-50"
+    textColor="text-my-green-700"
+  />
+  <ResultItem
+    title="Visual"
+    value={visual}
+    bgColor="bg-my-blue-50"
+    textColor="text-my-blue-700"
+  />
+</div>

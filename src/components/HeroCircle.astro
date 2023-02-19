@@ -1,0 +1,19 @@
+---
+interface Props {
+  score: number;
+}
+const { score } = Astro.props;
+---
+
+<div
+  class="w-35 h-35 sm:w-50 sm:h-50 mt-6 sm:mt-9 rounded-full bg-gradient2 flex flex-col justify-center items-center"
+>
+  <div
+    class="font-bold text-white text-[3.5rem] sm:text-[72px] leading-[72px] pt-2"
+  >
+    {score}
+  </div>
+  <div class="font-medium text-base sm:text-lg text-my-blue-300 opacity-50">
+    of 100
+  </div>
+</div>

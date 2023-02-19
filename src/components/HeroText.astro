@@ -1,0 +1,25 @@
+---
+interface Props {
+  score: number;
+}
+const RATINGS = ["OK", "Super", "Great", "Superb"];
+const getRating = (exceeding: number) => {
+  return RATINGS[Math.floor(exceeding * RATINGS.length)];
+};
+
+const { score } = Astro.props;
+const exceeding = (score / 100) * 0.86;
+const rating = getRating(exceeding);
+---
+
+<div class="flex flex-col items-center w-[260px] mt-6 sm:mt-7">
+  <div class="font-bold text-2xl sm:text-[32px] leading-10 text-white">
+    {rating}
+  </div>
+  <div
+    class="text-base leading-5 sm:text-lg sm:leading-6 text-my-blue-300 text-center mt-2 sm:mt-3.5 font-normal"
+  >
+    Your performance exceed {Math.floor(exceeding * 100)}% of the people
+    conducting the test here!
+  </div>
+</div>
