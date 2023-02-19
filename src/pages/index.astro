@@ -4,13 +4,12 @@ import HeroCircle from "../components/HeroCircle.astro";
 import HeroText from "../components/HeroText.astro";
 import HeroTitle from "../components/HeroTitle.astro";
 import ResultList from "../components/ResultList.astro";
+import results from "../data/data.json";
 import { Category, parseDetails } from "../lib/parse-details";
 
-const results = (await fetch("http://localhost:3000/data.json").then((res) =>
-  res.json()
-)) as Category[];
-
-const { reaction, memory, verbal, visual, score } = parseDetails(results);
+const { reaction, memory, verbal, visual, score } = parseDetails(
+  results as Category[]
+);
 ---
 
 <Layout>
